@@ -125,7 +125,11 @@ driver.close()
 #create a dataframe of the details
 store_details = pd.DataFrame(store_details_list)
 
-.to_csv(r"C:\Users\paperspace\Desktop\Software Engineering for Economists Project\test.csv")
+store_details.columns=['Store_Name', 'Address', 'City_State', 'Phone_no', 'Script_State', 'Script_City']
+
+Relevant_Details = store_details[['Store_Name', 'Address', 'City_State']]
+
+Relevant_Details.to_csv(r"C:\Users\paperspace\Desktop\Software Engineering for Economists Project\test.csv")
 
 ##################################################################
 ###### Calling Google Geocoding API to add gps coordinates  ######
