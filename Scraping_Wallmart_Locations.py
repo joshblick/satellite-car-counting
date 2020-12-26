@@ -129,7 +129,7 @@ store_details.columns=['Store_Name', 'Address', 'City_State', 'Phone_no', 'Scrip
 
 Relevant_Details = store_details[['Store_Name', 'Address', 'City_State']]
 
-Relevant_Details.to_csv(r"C:\Users\paperspace\Desktop\Software Engineering for Economists Project\test.csv")
+Relevant_Details.to_csv(r"C:\Users\paperspace\Documents\GitHub\satellite-car-counting\stores.csv")
 
 ##################################################################
 ###### Calling Google Geocoding API to add gps coordinates  ######
