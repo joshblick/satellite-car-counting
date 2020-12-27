@@ -35,7 +35,7 @@ def opendir_retstates(driver_var, store_loc_address, state_ele_name):
     #open the site showing the store directories
     driver_var.get(store_loc_address)
     #wait for the site to load
-    time.sleep(2)
+    time.sleep(3)
     #return a list of all the states
     return driver_var.find_elements_by_class_name(state_ele_name)
 
@@ -46,7 +46,7 @@ def openstate_returncities(driver_var, state_address, city_ele_name):
     #open the site for the specific state
     driver_var.get(state_address)
     #wait for the site to load
-    time.sleep(2)
+    time.sleep(3)
     #return a list of all the cities
     return driver_var.find_elements_by_class_name(city_ele_name)
 
@@ -57,7 +57,7 @@ def record_city_stores(driver_var, city_element, state_name, city_name, store_el
     #click on the element for the given city
     city_element.click()
     #wait for the site to load
-    time.sleep(1)
+    time.sleep(3)
     #get a list of the elements for each store
     stores = driver_var.find_elements_by_class_name(store_ele_name)
     
