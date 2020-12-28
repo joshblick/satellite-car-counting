@@ -90,7 +90,7 @@ no_states = len(states)
 state_names = [state.text for state in states]
 
 # we then loop through the states
-for state_no, state_name in enumerate(state_names):
+for state_no, state_name in zip(range(18,22), state_names[18:22]):
     #print the name of the state
     print("----------" + state_name + "----------")
     #navigate to the homepage to get a current list of elements
