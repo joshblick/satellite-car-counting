@@ -90,7 +90,7 @@ no_states = len(states)
 state_names = [state.text for state in states]
 
 # we then loop through the states
-for state_no, state_name in zip(range(21,30), state_names[21:30]):
+for state_no, state_name in enumerate(state_names):
     #print the name of the state
     print("----------" + state_name + "----------")
     #navigate to the homepage to get a current list of elements
@@ -129,7 +129,9 @@ store_details.columns=['Store_Name', 'Address', 'City_State', 'Phone_no', 'Scrip
 
 Relevant_Details = store_details[['Store_Name', 'Address', 'City_State']]
 
-Relevant_Details.to_csv(r"C:\Users\paperspace\Documents\GitHub\satellite-car-counting\stores_tranche3.csv")
+
+Relevant_Details.to_csv(r"C:\Users\paperspace\Documents\GitHub\satellite-car-counting\stores_master.csv")
+
 
 ##################################################################
 ###### Calling Google Geocoding API to add gps coordinates  ######
