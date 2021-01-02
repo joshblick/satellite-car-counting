@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Script to scrape the Wallmart website and obtain locations
+Script to scrape the Walmart website and obtain store locations
 
-Also leverage google geocoding api to pull gps location
 
 Created by: Joshua Blick
-FIrst Version: 26/12/2020
+FIrst Version: 26/10/2020
 """
 #import the required packages
 from selenium import webdriver
@@ -57,7 +56,7 @@ def record_city_stores(driver_var, city_element, state_name, city_name, store_el
     #click on the element for the given city
     city_element.click()
     #wait for the site to load
-    time.sleep(3)
+    time.sleep(4)
     #get a list of the elements for each store
     stores = driver_var.find_elements_by_class_name(store_ele_name)
     
@@ -90,7 +89,7 @@ no_states = len(states)
 state_names = [state.text for state in states]
 
 # we then loop through the states
-for state_no, state_name in zip(range(5,19), state_names[5:19]):
+for state_no, state_name in enumerate(state_names):
     #print the name of the state
     print("----------" + state_name + "----------")
     #navigate to the homepage to get a current list of elements
@@ -129,11 +128,7 @@ store_details.columns=['Store_Name', 'Address', 'City_State', 'Phone_no', 'Scrip
 
 Relevant_Details = store_details[['Store_Name', 'Address', 'City_State']]
 
+Relevant_Details.to_csv(r"C:\Users\paperspace\Documents\GitHub\satellite-car-counting\stores_complete.csv")
 
-Relevant_Details.to_csv(r"C:\Users\paperspace\Documents\GitHub\satellite-car-counting\stores_master.csv")
 
-
-##################################################################
-###### Calling Google Geocoding API to add gps coordinates  ######
-##################################################################
 
